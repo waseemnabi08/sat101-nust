@@ -8,70 +8,107 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-blue-600 text-white p-4">
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
         <div class="container mx-auto">
             <h1 class="text-2xl font-bold">SAT 101: Deciphering SAT Attack on Computer Chips</h1>
         </div>
     </nav>
 
     <main class="container mx-auto px-4 py-8">
+        <!-- Certificate Download Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-4 text-blue-800">Download Your Certificate</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <form id="certificateForm" class="space-y-4">
+                    <div>
+                        <label for="cnic" class="block text-sm font-medium text-gray-700">Enter your CNIC (without dashes)</label>
+                        <input type="text" id="cnic" name="cnic" pattern="[0-9]{13}" required 
+                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                               placeholder="Enter 13 digit CNIC">
+                    </div>
+                    <button type="submit" 
+                            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Download Certificate
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Workshop Feedback Section -->
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Feedback</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <form id="feedbackForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">How would you rate the workshop?</label>
+                        <div class="flex space-x-4 text-2xl text-yellow-400 mt-2">
+                            <i class="fas fa-star cursor-pointer" data-rating="1"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="2"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="3"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="4"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="feedback" class="block text-sm font-medium text-gray-700">Your Feedback</label>
+                        <textarea id="feedback" name="feedback" rows="4" 
+                                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                  placeholder="Share your thoughts about the workshop"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                        Submit Feedback
+                    </button>
+                </form>
+            </div>
+        </section>
+
         <!-- Workshop Overview -->
         <section class="mb-12">
             <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Overview</h2>
             <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="mb-4 text-green-600 font-bold">✓ Workshop Completed Successfully on February 21st, 2025</div>
                 <p class="mb-4"><strong>Date:</strong> 21st February 2025 (Friday)</p>
                 <p class="mb-4"><strong>Time:</strong> 09:00 AM – 12:30 PM</p>
                 <p class="mb-4"><strong>Venue:</strong> NUST College of EME, Rawalpindi</p>
-                <p class="mb-4"><strong>CPD Points:</strong> 1</p>
+                <p class="mb-4"><strong>CPD Points:</strong> 1/2</p>
                 
                 <h3 class="font-bold mt-6 mb-2">Topics Covered:</h3>
                 <ul class="list-disc pl-6">
                     <li>Piracy and reverse engineering of chips</li>
-                    <li>SAT attack: How it works and its impact</li>
-                    <li>Defense strategies against SAT attacks</li>
+                    <li>Logic locking: A defense mechanism</li>
+                    <li>Clause-based SAT formulation</li>
+                    <li>miter-based SAT formulation</li>
+                    <li>Practical: Running SAT attack</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Schedule -->
-        <section class="mb-12">
-            <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Schedule</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <table class="w-full">
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">09:00 – 09:15</td>
-                            <td class="py-2">Registration</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">09:15 – 10:15</td>
-                            <td class="py-2">Lecture 1: Piracy of Chips</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">10:15 – 10:45</td>
-                            <td class="py-2">Activity 1: Clauses & SAT</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">10:45 – 11:00</td>
-                            <td class="py-2">Break</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">11:00 – 11:45</td>
-                            <td class="py-2">Lecture 2: SAT Attack</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="py-2 pr-4 font-medium">11:45 – 12:15</td>
-                            <td class="py-2">Activity 2: Running SAT Attack</td>
-                        </tr>
-                        <tr>
-                            <td class="py-2 pr-4 font-medium">12:15 – 12:30</td>
-                            <td class="py-2">Q/A and Closing Remarks</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Workshop Highlights -->
+    <section class="mb-12">
+        <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Highlights</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border-b md:border-b-0 md:border-r p-4">
+                    <h3 class="font-bold mb-2">Morning Session</h3>
+                    <ul class="list-disc pl-4">
+                        <li>Introduction to Chip Piracy</li>
+                        <li>Hands-on: Clauses & SAT Implementation</li>
+                    </ul>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Afternoon Session</h3>
+                    <ul class="list-disc pl-4">
+                        <li>SAT Attack Deep Dive</li>
+                        <li>Practical: Running SAT Attack</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-
+            <div class="mt-4 pt-4 border-t">
+                <p class="text-gray-600"><strong>Achievement:</strong> Participants gained hands-on experience with SAT attacks and defense strategies in hardware security.</p>
+            </div>
+        </div>
+    </section>
         <!-- Resources -->
         <section class="mb-12">
             <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Resources</h2>
@@ -94,7 +131,6 @@
                             Activities & Worksheet
                         </a>
                     </li>
-                    <li>
                     <li>
                         <a href="https://github.com/waseemnabi08/Logic_locking" class="text-blue-600 hover:text-blue-800 flex items-center">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,31 +157,31 @@
         <section>
             <h2 class="text-xl font-bold mb-4 text-blue-800">Workshop Organizers</h2>
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <ul>
+                <ul class="space-y-2">
                     <li>
                         Waseem Ghulam -  
-                        <a href="https://github.com/waseemnabi08" target="_blank">
+                        <a href="https://github.com/waseemnabi08" target="_blank" class="text-gray-600 hover:text-gray-800">
                             <i class="fab fa-github"></i>
                         </a>  
-                        <a href="https://linkedin.com/in/waseemnabi08" target="_blank">
+                        <a href="https://linkedin.com/in/waseemnabi08" target="_blank" class="text-blue-600 hover:text-blue-800">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li>
                         Ameer Hamza -  
-                        <a href="https://linkedin.com/in/ameerhamza929" target="_blank">
+                        <a href="https://linkedin.com/in/ameerhamza929" target="_blank" class="text-gray-600 hover:text-gray-800">
                             <i class="fab fa-github"></i>
                         </a>  
-                        <a href="http://www.linkedin.com/in/ameer-hamza-4642a8260" target="_blank">
+                        <a href="http://www.linkedin.com/in/ameer-hamza-4642a8260" target="_blank" class="text-blue-600 hover:text-blue-800">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li>
                         Muhammad Mussa Kazim -  
-                        <a href="https://github.com/mussakazim" target="_blank">
+                        <a href="https://github.com/mussakazim" target="_blank" class="text-gray-600 hover:text-gray-800">
                             <i class="fab fa-github"></i>
                         </a>  
-                        <a href="https://linkedin.com/in/mussakazim" target="_blank">
+                        <a href="https://linkedin.com/in/mussakazim" target="_blank" class="text-blue-600 hover:text-blue-800">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
@@ -159,5 +195,67 @@
             <p>© 2025 NUST College of EME. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Certificate Download Handling
+        document.getElementById('certificateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cnic = document.getElementById('cnic').value;
+            if(cnic.length === 13 && /^\d+$/.test(cnic)) {
+                window.location.href = `${cnic}.pdf`;
+            } else {
+                alert('Please enter a valid 13-digit CNIC number');
+            }
+        });
+
+        // Star Rating System
+        const stars = document.querySelectorAll('.fa-star');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', function() {
+                const rating = this.dataset.rating;
+                highlightStars(rating);
+            });
+
+            star.addEventListener('mouseout', function() {
+                highlightStars(selectedRating);
+            });
+
+            star.addEventListener('click', function() {
+                selectedRating = this.dataset.rating;
+                highlightStars(selectedRating);
+            });
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                const starRating = star.dataset.rating;
+                star.style.color = starRating <= rating ? '#FBBF24' : '#D1D5DB';
+            });
+        }
+
+        // Feedback Form Handling
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('feedback').value;
+            
+            if (!selectedRating) {
+                alert('Please select a rating before submitting your feedback');
+                return;
+            }
+            
+            if (!feedback.trim()) {
+                alert('Please provide some feedback before submitting');
+                return;
+            }
+
+            // Here you would typically send this to your server
+            alert('Thank you for your feedback! Your rating: ' + selectedRating + ' stars');
+            this.reset();
+            selectedRating = 0;
+            highlightStars(0);
+        });
+    </script>
 </body>
 </html>
