@@ -202,7 +202,8 @@
             e.preventDefault();
             const cnic = document.getElementById('cnic').value;
             if(cnic.length === 13 && /^\d+$/.test(cnic)) {
-                window.location.href = `${cnic}.pdf`;
+                <! -- window.location.href = `${cnic}.pdf`; -->
+                    window.location.href = `soon.jpg`;
             } else {
                 alert('Please enter a valid 13-digit CNIC number');
             }
